@@ -1,6 +1,15 @@
 {% extends 'music/layout.html' %}
 {% block content %}
+<div class="center">
 <h1>
     {{album}}
 </h1>
+<h3>{{album.artist}}</h3>
+<img src="{{album.album_logo}}" alt="">
+<ul class="collection">
+    {% for song in album.song_set.all %}
+    <li class="collection-item">{{song}} {{song.type}} </li>
+    {% endfor %}
+</ul>
+</div>
 {% endblock %}
