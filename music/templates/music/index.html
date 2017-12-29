@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Album | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+    <header class="container center-align">
+        <h1>Browse your Albums</h1>
+    </header>
+    <div class="container">
+        {% if all_albums %}
+        <ul class="collection">
+
+            {% for album in all_albums %}
+            <li class="collection-item">
+                <a href="/music/{{ album.id }}">{{ album.album_title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <h3>You don't have any albums</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
