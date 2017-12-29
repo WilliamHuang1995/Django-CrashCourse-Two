@@ -6,10 +6,13 @@
 </h1>
 <h3>{{album.artist}}</h3>
 <img src="{{album.album_logo}}" alt="">
-<ul class="collection">
-    {% for song in album.song_set.all %}
-    <li class="collection-item">{{song}} {{song.type}} </li>
-    {% endfor %}
-</ul>
+    <ul class="collection">   
+        {% for song in album.song_set.all %}
+    <li class="collection-item">{{song}} {{song.type}}</li>
+        {% endfor %}
+    </ul>
+    <p>There are no songs yet, add some songs now!
+     <a href="/admin">Click here</a>
+    </p>
 </div>
 {% endblock %}
